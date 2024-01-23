@@ -8,9 +8,9 @@ Contents:
   - [Preliminary Study](#preliminary-study)
   - [Overall Performance](#overall-performance)
   - [Ablation Study](#ablation-study)
-  - [Scalability Validation](#scalability-validation)
   - [Learning Curve](#learning-curve)
   - [Adaption to Unseen Size](#adaption-to-unseen-size)
+  - [Scalability Validation](#scalability-validation)
   - [Hyperparameter Sensitive Study](#hyperparameter-sensitive-study)
 
 ## Installation
@@ -33,18 +33,10 @@ bash install.sh -c 0
 ```shell
 .
 ├── args.py
-├── dataset
-│   └── p_net               # physical network dataset
-│       ├── Geant-cpu_[50-100]-max_cpu_None-gpu_[50-100]-max_gpu_None-ram_[50-100]-max_ram_None-bw_[50-100]-max_bw_None
-│       │   └── p_net.gml   # Topology: Geant
-│       ├── Waxman100-cpu_[50-100]-max_cpu_None-gpu_[50-100]-max_gpu_None-ram_[50-100]-max_ram_None-bw_[50-100]-max_bw_None
-│       │   └── p_net.gml   # Topology: WX100
-│       └── Waxman500-cpu_[50-100]-max_cpu_None-gpu_[50-100]-max_gpu_None-ram_[50-100]-max_ram_None-bw_[50-100]-max_bw_None
-│           └── p_net.gml   # Topology: WX500
 ├── main.py
 ├── settings
-│   ├── p_net_setting_multi_resource.yaml  # Setting of physical network 
-│   ├── v_sim_setting_multi_resource.yaml  # Setting of virtual network request simulator 
+│   ├── p_net_setting_multi_resource.yaml  # Simulation setting of physical network 
+│   ├── v_sim_setting_multi_resource.yaml  # Simulation setting of virtual network request simulator 
 └── vne_simulator
     ├── base                # Core components: environment, controller, recorder, scenario, solution
     ├── config.py           # Configuration class
@@ -79,7 +71,7 @@ Key settings in the shell scripts are as follows:
 - `solver_name`:
   - Description: Name of solver
   - Options: 
-    - Our algorithms: [flag_vne, flag_vne_meta_free_single_policy, flag_vne_meta_free_multi_policies, flag_vne_meta_policy, flag_vne_no_currimulum, flag_vne_unidirectional_action]
+    - Our algorithms: [flag_vne, flag_vne_meta_free_single_policy, flag_vne_meta_free_multi_policies, flag_vne_meta_policy, flag_vne_no_curriculum, flag_vne_unidirectional_action]
     - Baselines: [nrm_rank, nea_rank, pso_vne, mcts, a3c_gcn, pg_cnn, ddpg_attention]
     - Preliminary Study: [a3c_gcn, a3c_gcn_nrm, a3c_gcn_nea, a3c_gcn_multi_policies]
 - `num_train_epochs`:
@@ -94,7 +86,7 @@ Key settings in the shell scripts are as follows:
 
 ### Preliminary Study
 
-Shell script: `run_preliminary_study.sh`
+shell script: `run_preliminary_study.sh`
 
 Run the experiments of the preliminary study by the following procedure:
 
@@ -109,55 +101,94 @@ For topology in [geant, wx100]:
 
 ### Overall Performance
 
+shell script: `run_overall_performance.sh`
+
 Run the experiments of the overall performance by the following procedure:
 
 ```
 For topology in [geant, wx100]:
     For solver_name in [flag_vne, nrm_rank, nea_rank, pso_vne, mcts, a3c_gcn, pg_cnn, ddpg_attention]:
-        1. Set the solver name to $solver_name in run_exp.sh
-        2. Set the topology to $topology in run_exp.sh
+        1. Set the solver name to $solver_name in run_overall_performance.sh
+        2. Set the topology to $topology in run_overall_performance.sh
         3. Run the code with the following command:
-           bash run_exp.sh
+           bash run_overall_performance.sh
 ```
-
-### Learning Curve
-
-Run the experiments of the learning curve by the following procedure:
-
-```
-For topology in [geant, wx100]:
-    For solver_name in [flag_vne, flag_vne_meta_free_single_policy, flag_vne_meta_free_multi_policies]:
-        1. Set the solver name to $solver_name in run_exp.sh
-        2. Set the topology to $topology in run_exp.sh
-        3. Run the code with the following command:
-           bash run_exp.sh
-```
-
-### Adaption to Unseen Size
-
-Run the experiments of the adaption to unseen size by the following procedure:
-
-```
-For topology in [geant, wx100]:
-    For solver_name in [flag_vne, flag_vne_meta_free_single_policy, flag_vne_meta_free_multi_policies]:
-        1. Set the solver name to $solver_name in run_exp_unseen_task.sh
-        2. Set the topology to one of the following options: ['geant', 'wx100']
-        3. Set the pre-trained model path to the path of the model trained on the training set with the same topology
-        4. Set the unseen size to 12
-        5. Run the code with the following command:
-           bash run_exp_unseen_task.sh
-```
-
 
 ### Ablation Study
+
+shell script: `run_ablation_study.sh`
 
 Run the experiments of the ablation study by the following procedure:
 
 ```
 For topology in [geant, wx100]:
-    For solver_name in [flag_vne, flag_vne_meta_free_single_policy, flag_vne_meta_free_multi_policies]:
+    For solver_name in [flag_vne, flag_vne_meta_free_single_policy, flag_vne_meta_free_multi_policies, flag_vne_meta_policy, flag_vne_no_curriculum, flag_vne_unidirectional_action]:
         1. Set the solver name to $solver_name in run_exp.sh
         2. Set the topology to one of the following options: ['geant', 'wx100']
         3. Run the code with the following command:
           bash run_exp.sh
+```
+
+### Learning Curve
+
+shell script: `run_ablation_study.sh`
+
+Run the experiments of the learning curve by the following procedure:
+
+
+```
+For topology in [geant, wx100]:
+    For solver_name in [flag_vne, flag_vne_meta_free_single_policy, flag_vne_meta_free_multi_policies, flag_vne_meta_policy, flag_vne_no_curriculum, flag_vne_unidirectional_action]:
+        1. Set the solver name to $solver_name in run_ablation_study.sh
+        2. Set the topology to $topology in run_ablation_study.sh
+        3. Run the code with the following command:
+           bash run_ablation_study.sh
+```
+
+### Adaption to Unseen Size
+
+shell script: `run_adaptation.sh`
+
+Run the experiments of the adaption to unseen size by the following procedure:
+
+```
+For topology in [geant, wx100]:
+    For solver_name in [flag_vne, flag_vne_meta_free_single_policy, flag_vne_meta_free_multi_policies, flag_vne_meta_policy, flag_vne_no_curriculum, flag_vne_unidirectional_action]:
+        1. Set the solver name to $solver_name in run_adaptation.sh
+        2. Set the topology to one of the following options: ['geant', 'wx100']
+        3. Set the pre-trained model path to the path of the model trained on the training set with the same topology
+        4. Set the unseen size to 12
+        5. Run the code with the following command:
+           bash run_adaptation.sh
+```
+
+### Scalability Validation
+
+shell script: `run_scalability_validation.sh`
+
+Run the experiments of the scalability validation by the following procedure:
+
+```
+For topology in [geant, wx100]:
+    For solver_name in [flag_vne, nrm_rank, nea_rank, pso_vne, mcts, a3c_gcn, pg_cnn, ddpg_attention]:
+        1. Set the solver name to $solver_name in run_scalability_validation.sh
+        2. Set the topology to one of the following options: ['wx500']
+        3. Run the code with the following command:
+          bash run_scalability_validation.sh
+```
+
+### Hyperparameter Sensitive Study
+
+shell script: `run_hyperparameter_sensitive_study.sh`
+
+Run the experiments of the hyperparameter sensitive study by the following procedure:
+
+```
+For topology in [geant, wx100]:
+    For solver_name in [flag_vne]:
+        1. Set the solver name to $solver_name in run_hyperparameter_sensitive_study.sh
+        2. Set the topology to one of the following options: ['geant', 'wx100']
+        2. Set the policy_entropy_threshold to one of the following options: [1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0]
+        3. Run the code with the following command:
+          bash run_hyperparameter_sensitive_study.sh
 ```
