@@ -16,16 +16,6 @@ lifetime:
   distribution: exponential
   dtype: float
   scale: 500
-# lifetime:
-#   distribution: uniform
-#   dtype: float
-#   low: 0
-#   high: 0
-# max_latency:
-#   distribution: uniform
-#   dtype: float
-#   low: 0
-#   high: 50
 node_attrs_setting:
   - name: cpu
     distribution: uniform

@@ -36,10 +36,6 @@ class ActorCritic(nn.Module):
             value = self.critic(p_node_dense_embeddings)
             return value
 
-    # def act(self, x):
-    #     v_graph_embedding, v_node_dense_embeddings, v_net_mask, p_graph_embedding, p_node_dense_embeddings, p_net_mask = self.encoder(x)
-    #     return self.actor(v_graph_embedding, p_node_dense_embeddings)
-    
     def evaluate(self, x):
         v_graph_embedding, v_node_dense_embeddings, v_net_mask, p_graph_embedding, p_node_dense_embeddings, p_net_mask = self.encoder(x)
         p_node_dense_embeddings = p_node_dense_embeddings + v_graph_embedding.unsqueeze(1)
@@ -65,8 +61,6 @@ class Actor(nn.Module):
             nn.ReLU(),
             nn.Linear(embedding_dim, 1),
         )
-        # self.num_heads = 4
-        # self.high_policy = MultiHeadSelfAttention(embedding_dim, embedding_dim, num_heads=self.num_heads)
 
     def get_high_policy(self, state_embeddings):
         logits = self.high_policy(state_embeddings).squeeze(-1)
@@ -74,8 +68,6 @@ class Actor(nn.Module):
 
     def get_low_policy(self, state_embeddings):
         logits = self.low_policy(state_embeddings).squeeze(-1)
-        # high_level_query = v_graph_embedding.unsqueeze(1)
-        # logits = self.high_policy(high_level_query, p_node_dense_embeddings).squeeze(1)
         return logits
 
 
@@ -101,7 +93,6 @@ class Critic(nn.Module):
     def forward(self, state_embeddings):
         fusion = self.head(state_embeddings).squeeze(-1)
         value = self.value_head(fusion).squeeze(-1)
-        # value = torch.mean(fusion, dim=-1, keepdim=True)
         return value
 
 
@@ -138,7 +129,6 @@ class BaseModel(nn.Module):
     def _init_parameters(self):
         for name, param in self.named_parameters():
             if 'weight' in name:
-                # nn.init.orthogonal_(param)
                 stdv = 1. / math.sqrt(param.size(-1))
                 param.data.uniform_(-stdv, stdv)
             elif 'bias' in name:

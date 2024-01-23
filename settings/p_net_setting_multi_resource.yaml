@@ -18,13 +18,6 @@ link_attrs_setting:
     originator: bw
     owner: link
     type: extrema
-  # - name: ltc
-  #   owner: link
-  #   type: latency
-  #   generative: true
-  #   distribution: customized
-  #   max: 1.
-  #   min: 0.
 node_attrs_setting:
   - name: cpu
     distribution: uniform
