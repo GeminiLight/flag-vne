@@ -1,8 +1,3 @@
-# ==============================================================================
-# Copyright 2023 GeminiLight (wtfly2018@gmail.com). All Rights Reserved.
-# ==============================================================================
-
-
 import copy
 import numpy as np
 import networkx as nx

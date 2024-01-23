@@ -1,8 +1,3 @@
-# ==============================================================================
-# Copyright 2023 GeminiLight (wtfly2018@gmail.com). All Rights Reserved.
-# ==============================================================================
-
-
 import abc
 from typing import Union
 import numpy as np

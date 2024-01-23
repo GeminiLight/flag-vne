@@ -1,8 +1,3 @@
-# ==============================================================================
-# Copyright 2023 GeminiLight (wtfly2018@gmail.com). All Rights Reserved.
-# ==============================================================================
-
-
 from matplotlib import pyplot as plt
 import networkx as nx
 

@@ -1,8 +1,3 @@
-# ==============================================================================
-# Copyright 2023 GeminiLight (wtfly2018@gmail.com). All Rights Reserved.
-# ==============================================================================
-
-
 import pprint
 from collections import OrderedDict
 from vne_simulator.utils.class_dict import ClassDict
