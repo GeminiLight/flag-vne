@@ -112,11 +112,6 @@ run_arg.add_argument('--save_interval', type=int, default=10, help='')
 
 ### Misc ###
 misc_arg = parser.add_argument_group('misc')
-# misc_arg.add_argument('--use_baseline_solver', type=str2bool, default=False, help='')
-# misc_arg.add_argument('--srl_cost_budget', type=float, default=0.05, help='')
-# misc_arg.add_argument('--srl_alpha', type=float, default=1., help='')
-# misc_arg.add_argument('--srl_beta', type=float, default=0.1, help='')
-# misc_arg.add_argument('--srl_lambda', type=float, default=0.1, help='')
 
 
 def get_args(args=None):
