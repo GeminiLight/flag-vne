@@ -37,12 +37,14 @@ bash install.sh -c 0
 │   └── p_net               # physical network dataset
 │       ├── Geant-cpu_[50-100]-max_cpu_None-gpu_[50-100]-max_gpu_None-ram_[50-100]-max_ram_None-bw_[50-100]-max_bw_None
 │       │   └── p_net.gml   # Topology: Geant
-│       └── Waxman100-cpu_[50-100]-max_cpu_None-gpu_[50-100]-max_gpu_None-ram_[50-100]-max_ram_None-bw_[50-100]-max_bw_None
-│           └── p_net.gml   # Topology: WX100
+│       ├── Waxman100-cpu_[50-100]-max_cpu_None-gpu_[50-100]-max_gpu_None-ram_[50-100]-max_ram_None-bw_[50-100]-max_bw_None
+│       │   └── p_net.gml   # Topology: WX100
+│       └── Waxman500-cpu_[50-100]-max_cpu_None-gpu_[50-100]-max_gpu_None-ram_[50-100]-max_ram_None-bw_[50-100]-max_bw_None
+│           └── p_net.gml   # Topology: WX500
 ├── main.py
 ├── settings
-│   ├── p_net_setting.yaml  # Setting of physical network 
-│   ├── v_sim_setting.yaml  # Setting of virtual network request simulator 
+│   ├── p_net_setting_multi_resource.yaml  # Setting of physical network 
+│   ├── v_sim_setting_multi_resource.yaml  # Setting of virtual network request simulator 
 └── vne_simulator
     ├── base                # Core components: environment, controller, recorder, scenario, solution
     ├── config.py           # Configuration class
