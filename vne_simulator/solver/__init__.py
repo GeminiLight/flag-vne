@@ -5,7 +5,7 @@ from .meta_heuristic import *
 from .learning import *
 from .registry import REGISTRY, register, get
 
-from . import exact, heuristic, meta_heuristic, learning
+from . import heuristic, meta_heuristic, learning
 
 
 SOLVERS = {

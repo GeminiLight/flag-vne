@@ -1,5 +1,5 @@
 # ================== Solver list ================== #
-# Our Algorithms: [flag_vne, flag_vne_meta_free_single_policy, flag_vne_meta_free_multi_policies, flag_vne_meta_policy, flag_vne_no_currimulum]
+# Our Algorithms: [flag_vne, flag_vne_meta_free_single_policy, flag_vne_meta_free_multi_policy, flag_vne_meta_policy, flag_vne_no_curriculum]
 # ================== 1. Key Settings ================== #
 solver_name="flag_vne"             # Solver name. Options: SOLVER_LIST
 topology="geant"                   # Topology name. Options: [geant, wx100]
@@ -10,6 +10,7 @@ v_sim_setting_num_v_nets=1
 unseen_v_net_size=12
 v_sim_setting_v_net_size_low=$unseen_v_net_size
 v_sim_setting_v_net_size_high=$unseen_v_net_size
+use_pretrained_model=1
 # ================ 3. Other Settings ================ #
 cuda_device=0                      # Cuda device id
 batch_size=128                     # Batch size

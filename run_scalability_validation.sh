@@ -3,20 +3,17 @@
 # Heuristic Baselines: [nrm_rank, nea_rank, pso]
 # RL-based Baselines: [mcts, a3c_gcn, pg_cnn, ddpg_attention]
 # ================== 1. Key Settings ================== #
-solver_name="mcts"               # Solver name. Options: SOLVER_LIST
+solver_name="nrm_rank"               # Solver name. Options: SOLVER_LIST
 topology="wx500"                 # Topology name. Options: [wx500]
 num_train_epochs=0               # Number of training epochs. Options: [0, >0]. If 0, then inference only.
-use_bidirectional_action=0
-use_meta_learning=1
 num_meta_learning_epochs=0       # Number of meta learning epochs. Only work for FlagVNE and its variants.
-use_curriculum_scheduling_strategy=0
 v_sim_setting_v_net_size_high=20
 use_pretrained_model=0
 # ================ 3. Other Settings ================ #
 cuda_device=0                      # Cuda device id
 batch_size=128                     # Batch size
 # ===================================================== #
-identifier="-train_epochs_$num_train_epochs-meta_learning_epochs_$num_meta_learning_epochs-batch_size_$batch_size-use_bidirectional_action_$use_bidirectional_action-use_meta_learning_$use_meta_learning-use_curriculum_scheduling_strategy_$use_curriculum_scheduling_strategy"
+identifier="-train_epochs_$num_train_epochs-meta_learning_epochs_$num_meta_learning_epochs-batch_size_$batch_size"
 
 # set pretrained model path for testing
 declare -A pretrained_model_path_dict_for_wx500

@@ -72,7 +72,7 @@ Key settings in the shell scripts are as follows:
 - `solver_name`:
   - Description: Name of solver
   - Options: 
-    - Our algorithms: [flag_vne, flag_vne_meta_free_single_policy, flag_vne_meta_free_multi_policies, flag_vne_meta_policy, flag_vne_no_curriculum, flag_vne_unidirectional_action]
+    - Our algorithms: [flag_vne, flag_vne_meta_free_single_policy, flag_vne_meta_free_multi_policy, flag_vne_meta_policy, flag_vne_no_curriculum, flag_vne_unidirectional_action]
     - Baselines: [nrm_rank, nea_rank, pso_vne, mcts, a3c_gcn, pg_cnn, ddpg_attention]
     - Preliminary Study: [a3c_gcn, a3c_gcn_nrm, a3c_gcn_nea, a3c_gcn_multi_policies]
 - `num_train_epochs`:
@@ -125,7 +125,7 @@ Run the experiments of the ablation study by the following procedure:
 
 ```
 For topology in [geant, wx100]:
-    For solver_name in [flag_vne, flag_vne_meta_free_single_policy, flag_vne_meta_free_multi_policies, flag_vne_meta_policy, flag_vne_no_curriculum, flag_vne_unidirectional_action]:
+    For solver_name in [flag_vne, flag_vne_meta_free_single_policy, flag_vne_meta_free_multi_policy, flag_vne_meta_policy, flag_vne_no_curriculum, flag_vne_unidirectional_action]:
         1. Set the solver name to $solver_name in run_exp.sh
         2. Set the topology to one of the following options: ['geant', 'wx100']
         3. Run the code with the following command:
@@ -141,7 +141,7 @@ Run the experiments of the learning curve by the following procedure:
 
 ```
 For topology in [geant, wx100]:
-    For solver_name in [flag_vne, flag_vne_meta_free_single_policy, flag_vne_meta_free_multi_policies, flag_vne_meta_policy, flag_vne_no_curriculum, flag_vne_unidirectional_action]:
+    For solver_name in [flag_vne, flag_vne_meta_free_single_policy, flag_vne_meta_free_multi_policy, flag_vne_meta_policy, flag_vne_no_curriculum, flag_vne_unidirectional_action]:
         1. Set the solver name to $solver_name in run_ablation_study.sh
         2. Set the topology to $topology in run_ablation_study.sh
         3. Run the code with the following command:
@@ -156,7 +156,7 @@ Run the experiments of the adaption to unseen size by the following procedure:
 
 ```
 For topology in [geant, wx100]:
-    For solver_name in [flag_vne, flag_vne_meta_free_single_policy, flag_vne_meta_free_multi_policies, flag_vne_meta_policy, flag_vne_no_curriculum, flag_vne_unidirectional_action]:
+    For solver_name in [flag_vne, flag_vne_meta_free_single_policy, flag_vne_meta_free_multi_policy, flag_vne_meta_policy, flag_vne_no_curriculum, flag_vne_unidirectional_action]:
         1. Set the solver name to $solver_name in run_adaptation.sh
         2. Set the topology to one of the following options: ['geant', 'wx100']
         3. Set the pre-trained model path to the path of the model trained on the training set with the same topology

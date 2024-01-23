@@ -75,7 +75,7 @@ flag_vne_arg.add_argument('--infer_with_single_task_policy_id', type=int, defaul
 flag_vne_arg.add_argument('--use_bidirectional_action', type=str2bool, default=True, help='Whether to use bidirectional action')
 flag_vne_arg.add_argument('--use_meta_learning', type=str2bool, default=True, help='Whether to use meta learning')
 flag_vne_arg.add_argument('--use_curriculum_scheduling_strategy', type=str2bool, default=False, help='Whether to use curriculum scheduling strategy')
-flag_vne_arg.add_argument('--use_policy_entropy_threshold', type=float, default=2.0, help='policy entropy threshold for curriculum scheduling strategy')
+flag_vne_arg.add_argument('--policy_entropy_threshold', type=float, default=2.0, help='policy entropy threshold for curriculum scheduling strategy')
 
 ### Training ###
 train_arg = parser.add_argument_group('train')

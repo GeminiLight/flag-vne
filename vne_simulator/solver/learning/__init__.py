@@ -16,10 +16,19 @@ except ImportError:
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
-from .gae_clustering import GaeClusteringSolver
 from .mcts import MctsSolver
 from .pg_cnn import PgCnnSolver
 from .a3c_gcn import A3CGcnSolver
 from .ddpg_attention import DdpgAttentionSolver
 from .a3c_gcn_seq2seq import A3CGcnSeq2SeqSolver
 from .flag_vne import FlagVneSolver
+
+
+__all__ = [
+    'MctsSolver',
+    'PgCnnSolver',
+    'A3CGcnSolver',
+    'DdpgAttentionSolver',
+    'A3CGcnSeq2SeqSolver',
+    'FlagVneSolver',
+]

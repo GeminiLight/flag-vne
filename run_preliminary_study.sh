@@ -1,7 +1,7 @@
 # ================== Solver list ================== #
 # A3C-GCN and its Variants: [a3c_gcn, a3c_gcn_nrm_rank, a3c_gcn_nea_rank, a3c_gcn_multi_policies]
 # ================== 1. Key Settings ================== #
-solver_name="a3c_gcn"            # Solver name. Options: SOLVER_LIST
+solver_name="a3c_gcn_multi_policies"            # Solver name. Options: SOLVER_LIST
 topology="wx100"                 # Topology name. Options: [geant, wx100]
 num_train_epochs=50              # Number of training epochs. Options: [0, >0]. If 0, then inference only.
 use_pretrained_model=0           # Whether to use pretrained model. Options: [0, 1]

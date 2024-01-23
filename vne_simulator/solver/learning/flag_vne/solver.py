@@ -27,8 +27,7 @@ class FlagVneSolver(InstanceAgent, PPOSolver):
         self.use_meta_learning = kwargs.get('use_meta_learning', True)
         self.num_meta_learning_epochs = kwargs.get('num_meta_learning_epochs', 40)
         # self.num_meta_learning_epochs = 0
-        self.use_entropy_driven_adaptive_lr = kwargs.get('use_entropy_driven_adaptive_lr', False)
-        self.use_curriculum_scheduling_strategy = kwargs.get('use_curriculum_scheduling_strategy', False)
+        self.use_curriculum_scheduling_strategy = kwargs.get('use_curriculum_scheduling_strategy', True)
         self.infer_with_meta_policy = kwargs.get('infer_with_meta_policy', False)
         ### ------------ flag vne ------------ ###
         InstanceAgent.__init__(self, InstanceRLEnv)
@@ -452,7 +451,6 @@ class FlagVneMetaFreeMultiPolicySolver(FlagVneSolver):
         self.use_bidirectional_action = True
         self.use_meta_learning = True
         self.num_meta_learning_epochs = 0
-        self.use_entropy_driven_adaptive_lr = False
         self.use_curriculum_scheduling_strategy = False
         self.infer_with_meta_policy = False
         ### ------------ flag vne ------------ ###
@@ -468,7 +466,6 @@ class FlagVneMetaFreeSinglePolicySolver(FlagVneSolver):
         self.use_bidirectional_action = True
         self.use_meta_learning = False
         self.num_meta_learning_epochs = 0
-        self.use_entropy_driven_adaptive_lr = False
         self.use_curriculum_scheduling_strategy = False
         self.infer_with_meta_policy = False
         ### ------------ flag vne ------------ ###
@@ -484,7 +481,6 @@ class FlagVneMetaPolicySolver(FlagVneSolver):
         self.use_bidirectional_action = True
         self.use_meta_learning = False
         self.num_meta_learning_epochs = 0
-        self.use_entropy_driven_adaptive_lr = False
         self.use_curriculum_scheduling_strategy = False
         self.infer_with_meta_policy = True
         ### ------------ flag vne ------------ ###
@@ -500,7 +496,6 @@ class FlagVneNoCurriculumSolver(FlagVneSolver):
         self.use_bidirectional_action = True
         self.use_meta_learning = False
         self.num_meta_learning_epochs = 0
-        self.use_entropy_driven_adaptive_lr = False
         self.use_curriculum_scheduling_strategy = True
         self.infer_with_meta_policy = False
         ### ------------ flag vne ------------ ###
@@ -516,7 +511,6 @@ class FlagVneUnidirectionalActionSolver(FlagVneSolver):
         self.use_bidirectional_action = False
         self.use_meta_learning = False
         self.num_meta_learning_epochs = 0
-        self.use_entropy_driven_adaptive_lr = False
         self.use_curriculum_scheduling_strategy = False
         self.infer_with_meta_policy = False
         ### ------------ flag vne ------------ ###

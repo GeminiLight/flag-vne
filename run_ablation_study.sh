@@ -2,9 +2,9 @@
 # Our Algorithms: [
 #   flag_vne, 
 #   flag_vne_meta_free_single_policy, 
-#   flag_vne_meta_free_multi_policies, 
+#   flag_vne_meta_free_multi_policy, 
 #   flag_vne_meta_policy, 
-#   flag_vne_no_currimulum, 
+#   flag_vne_no_curriculum, 
 #   flag_vne_unidirectional_action]
 # ================== 1. Key Settings ================== #
 solver_name="flag_vne"             # Solver name. Options: ALL_SOLVER_LIST
@@ -81,9 +81,6 @@ do
         --solver_name=$solver_name \
         --num_train_epochs=$num_train_epochs \
         --num_meta_learning_epochs=$num_meta_learning_epochs \
-        --use_bidirectional_action=$use_bidirectional_action \
-        --use_meta_learning=$use_meta_learning \
-        --use_curriculum_scheduling_strategy=$use_curriculum_scheduling_strategy \
         --pretrained_model_path=$pretrained_model_path \
         --batch_size=$batch_size \
         --v_sim_setting_aver_arrival_rate=$aver_arrival_rate \
