@@ -5,6 +5,7 @@ Contents:
 - [Installation](#installation)
 - [File Structure](#file-structure)
 - [Quick Start](#quick-start)
+- [Experiments](#experiments)
   - [Preliminary Study](#preliminary-study)
   - [Overall Performance](#overall-performance)
   - [Ablation Study](#ablation-study)
@@ -83,6 +84,8 @@ Key settings in the shell scripts are as follows:
 - `pretrained_model_path`:
   - Description: Path to the pretrained model. If inference, then the path must be valid.
   - Options: ['null', $path]
+
+## Experiments
 
 ### Preliminary Study
 
