@@ -48,11 +48,11 @@ bash install.sh -c 0
     │   ├── learning                                     # 
     │   │   ├── flag_vne                                 # Our Algorithm and its variations: FlagVNE, FlagVNE-MetaFree-SinglePolicy, FlagVNE-MetaFree-MultiPolicies, FlagVNE-NoCurriculum, FlagVNE-NEARank
     │   │   ├── a3c_gcn                                  # Baseline-3 and its variations: A3C-GCN, A3C-GCN-NRM, A3C-GCN-NEA, A3C-GCN-MultiPolicies
-    │   │   ├── ddpg_attention                           # Baseline-5: DDPG-Attention
-    │   │   ├── mcts                                     # Baseline-6: MCTS
-    │   │   └── pg_cnn                                   # Baseline-7: PG-CNN
+    │   │   ├── ddpg_attention                           # Baseline-4: DDPG-Attention
+    │   │   ├── mcts                                     # Baseline-5: MCTS
+    │   │   └── pg_cnn                                   # Baseline-6: PG-CNN
     │   ├── meta_heuristic                               #
-    │   │   └── particle_swarm_optimization_solver.py    # Baseline-8: PSO-VNE
+    │   │   └── particle_swarm_optimization_solver.py    # Baseline-7: PSO-VNE
     │   ├── registry.py
     │   └── solver.py
     └── utils
