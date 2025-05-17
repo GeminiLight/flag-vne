@@ -1,5 +1,10 @@
 # Code for FlagVNE
 
+> [!IMPORTANT]
+> :sparkles: The foundation model of FlagVNE has been integrated into our benchmark [Virne](https://github.com/GeminiLight/virne)
+> 
+> :sparkles: You can easily run it with a specific solver name `ppo_bigcn+` or `ppo_gat+` in Virne!
+
 Contents:
 
 - [Installation](#installation)
